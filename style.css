@@ -1,4 +1,14 @@
-/* RESET BÁSICO */
+/* VARIÁVEIS DE IDENTIDADE VANT */
+:root {
+  --primary-green: #1dd793;      /* Cor de destaque [cite: 39] */
+  --secondary-blue: #007bff;     /* Cor de contraste [cite: 41] */
+  --dark-neutral: #1a1a1a;       /* Fundo/Neutralidade [cite: 38] */
+  --light-gray: #f4f7f6;
+  --white: #ffffff;
+  --font-titles: 'Montserrat', sans-serif; /* Similar a Glancyr [cite: 48] */
+  --font-body: 'Open Sans', sans-serif;    /* Similar a Metropolis [cite: 50] */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,188 +16,378 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: var(--font-body);
+  color: var(--dark-neutral);
   line-height: 1.6;
-  color: #111;
+  background-color: var(--white);
 }
 
-/* CONTAINER PADRÃO */
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 25px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-titles);
+  text-transform: lowercase; /* Seguindo o estilo do logo "vant" [cite: 36] */
+  font-weight: 700;
 }
 
 /* HEADER */
 .header {
-  background: #fff;
-  border-bottom: 1px solid #eee;
+ background-color: #161717;
+  height: 80px;
+  display: flex;
+  align-items: center;
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .header-content {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  height: 70px;
+  align-items: center;
+  width: 100%;
 }
 
-.logo {
-  font-weight: bold;
-  font-size: 20px;
+.logo-text {
+  font-family: var(--font-titles);
+  font-size: 28px;
+  font-weight: 800;
+  color: #1DD793;
+  letter-spacing: -1px;
 }
 
 .nav a {
-  margin-left: 20px;
   text-decoration: none;
-  color: #111;
+  color: white;
+  margin-left: 30px;
   font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
+.nav a:hover { color: var(--primary-green); }
+
 .btn {
-  padding: 8px 16px;
-  border-radius: 6px;
-  background: #1dd793;
-  color: #fff;
+  padding: 12px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.btn-header {
+  background: var(--primary-green);
+  color: var(--white) !important;
+  margin-left: 30px;
 }
 
 /* HERO */
 .hero {
-  position: relative;  
-  min-height: 70vh;
+  height: 70vh;
   background: url("img/wallhaven-k762j7.png") center/cover no-repeat;
   display: flex;
   align-items: center;
+  position: relative;
+  color: var(--white);
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.5);
+  background: linear-gradient(to right, rgba(0,0,0,0.8), transparent);
 }
 
 .hero-content {
   position: relative;
-  color: #fff;
-  max-width: 600px;
+  max-width: 700px;
 }
 
-.hero h1 {
-  font-size: 36px;
-  margin-bottom: 16px;
+.hero h1 { font-size: 48px; margin-bottom: 20px; line-height: 1.1; }
+.hero h1 .highlight { color: var(--primary-green); }
+.hero p { font-size: 18px; margin-bottom: 30px; opacity: 0.9; }
+
+.btn-primary { background: var(--primary-green); color: var(--white); }
+.btn-primary:hover { background: #16b97d; transform: translateY(-2px); }
+
+/* SEÇÕES GERAIS */
+.about, .services, .contact-area { padding: 100px 0; }
+
+.section-subtitle {
+  color: var(--primary-green);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 10px;
 }
 
-.hero p {
-  margin-bottom: 20px;
-}
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.about-image img { width: 100%; border-radius: 12px; box-shadow: 20px 20px 0 var(--light-gray); }
 
-/* ABOUT */
-.about {
-  padding: 60px 0;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-}
-
-.about-image img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-/* SERVICES */
-.services {
-  padding: 60px 0;
-  background: #f8f8f8;
-}
-
-.section-title {
+/* IMPACT SECTION */
+.impact-section {
+  padding: 120px 0;
+  background: url("img/wallhaven-k762j7.png") center/cover no-repeat fixed;
+  position: relative;
   text-align: center;
-  margin-bottom: 40px;
+  color: var(--white);
 }
+
+.impact-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.75); }
+.impact-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+.impact-divider { width: 60px; height: 4px; background: var(--primary-green); margin: 30px auto 0; }
+
+/* SERVICES CARDS */
+.section-title { text-align: center; font-size: 36px; margin-bottom: 60px; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+
+.service-card {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+  border-bottom: 4px solid transparent;
+}
+/* EFEITO DE SOMBRA REFINADO */
+.shadow-effect img {
+    /* Sombra suave e elegante (box-shadow) */
+    box-shadow: 0 20px 40px rgba(59, 30, 30, 0.15); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito ao passar o mouse (opcional, para dar vida ao site) */
+.shadow-effect:hover img {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* AJUSTE PARA O TRIO DE SEÇÕES */
+.service-detail-section .detail-row:last-child {
+    margin-bottom: 0; /* Remove a margem extra da última seção */
+}
+
+/* TIPOGRAFIA VANT */
+.detail-text h2 {
+    font-family: 'Montserrat', sans-serif; /* Representando Glancyr [cite: 48, 49] */
+    font-weight: 800;
+    text-transform: lowercase; /* Estilo vant [cite: 52] */
+}
+
+.detail-text p, .benefits-list li {
+    font-family: 'Open Sans', sans-serif; /* Representando Metropolis [cite: 50, 51] */
+}
+/* --- SEÇÃO NOSSOS SERVIÇOS (INDEX) --- */
 
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px 0;
 }
 
 .service-card {
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    background: #fff;
+    border-radius: 15px; /* Bordas arredondadas modernas */
+    overflow: hidden;
+    transition: all 0.4s ease;
+    
+    /* EFEITO DE SOMBRA (BOX SHADOW) */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+    border: 1px solid rgba(0,0,0,0.05); /* Borda quase invisível para refinar */
+}
+
+/* Efeito de "levante" ao passar o mouse */
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .service-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
-.service-card h3,
-.service-card p {
-  padding: 12px 16px;
+.service-card-content {
+    padding: 25px;
 }
+
+/* Tipografia Vant nos títulos dos cards */
+.service-card-content h3 {
+    font-family: 'Montserrat', sans-serif; /* Glancyr */
+    font-weight: 800;
+    text-transform: lowercase; /* Identidade Vant */
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.service-card-content p {
+    font-family: 'Open Sans', sans-serif; /* Metropolis */
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Botão Veja Mais dentro do Card */
+.btn-veja-mais {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-veja-mais:hover {
+    text-decoration: underline;
+}
+.service-card:hover { transform: translateY(-10px); border-bottom-color: var(--primary-green); }
+.card-img-container { height: 220px; overflow: hidden; }
+.card-img-container img { width: 100%; height: 100%; object-fit: cover; }
+.card-content { padding: 30px; text-align: left; }
+.card-content h3 { margin-bottom: 15px; font-size: 20px; }
+.btn-more { color: var(--primary-green); text-decoration: none; font-weight: 700; font-size: 14px; }
 
 /* QUALITY */
-.quality {
-  position: relative;
-  padding: 80px 0;
-  background: url("assets/img/quality-bg.jpg") center/cover no-repeat;
-  color: #fff;
-}
+.quality { background: var(--dark-neutral); padding: 100px 0; color: var(--white); position: relative; }
+.highlight-green { color: var(--primary-green); }
+.quality-items { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 60px; }
+.item-icon {  font-size: 40px; font-weight: 800; color: #1DD793; margin-bottom: -5px; }
 
-.quality-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-}
-
-.quality-content {
-  position: relative;
-  text-align: center;
-}
-
-.quality-items {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 40px;
-}
-
-.quality-item {
-  background: rgba(255,255,255,0.1);
-  padding: 20px;
-  border-radius: 8px;
-}
+/* INSTAGRAM SECTION */
+.insta-section { padding: 100px 0; background: rgb(255, 255, 255); position: relative; }
+.insta-card {    max-width: 450px; margin: 0 auto; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); position: relative; z-index: 5; }
+.insta-grid {  grid-template-columns: 1fr 1fr; gap: 2px; }
+.grid-item { height: 350px; background-size: cover; background-position: center; }
+.insta-card-content { padding: 30px; text-align: center; }
+.insta-handle { font-size: 12px; color: #aaa; letter-spacing: 2px; }
+.btn-insta { margin-top: 20px; display: block; border: 2px solid var(--primary-green); color: var(--primary-green); padding: 10px; text-decoration: none; border-radius: 5px; font-weight: 700; }
 
 /* FOOTER */
-.footer {
-  background: #111;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-}
+.footer { background: #000; color: #666; padding: 40px 0; text-align: center; font-size: 13px; }
 
 /* RESPONSIVO */
-@media (max-width: 900px) {
-  .about-grid,
-  .services-grid,
-  .quality-items {
-    grid-template-columns: 1fr;
-  }
-
-  .hero h1 {
-    font-size: 28px;
-  }
-
-  .nav {
-    display: none;
-  }
+@media (max-width: 992px) {
+  .about-grid, .services-grid, .quality-items { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 36px; }
+  .nav { display: none; }
 }
+
+/* VARIÁVEIS DA MARCA VANT */
+:root {
+    --vant-green: #1dd793;      /* Destaque [cite: 39] */
+    --vant-blue: #007bff;       /* Contraste [cite: 41] */
+    --vant-neutral: #1a1a1a;    /* Fundo [cite: 38] */
+    --font-title: 'Montserrat', sans-serif; /* Glancyr [cite: 48] */
+    --font-body: 'Open Sans', sans-serif;    /* Metropolis [cite: 50] */
+}
+
+/* ESTILO DO BANNER DE CONTATO (ESTILO REFERÊNCIA) */
+.contact-banner {
+    position: relative;
+    padding: 120px 0;
+    background: url("img/wallhaven-k762j7.png") center/cover no-repeat;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.contact-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75); /* Escurecimento para leitura */
+}
+
+.contact-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.contact-content {
+    max-width: 60%;
+}
+
+.contact-top-text {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #ccc;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.contact-content h2 {
+    font-family: var(--font-title);
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.contact-content p {
+    font-size: 18px;
+    color: #ddd;
+    font-weight: 300;
+}
+
+/* BOTÃO ESTILO REFERÊNCIA (VAZADO COM SETA) */
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 35px;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px; /* Bordas arredondadas da referência */
+    font-size: 14px;
+    transition: 0.4s;
+}
+
+.btn-outline:hover {
+    background: var(--vant-green);
+    border-color: var(--vant-green);
+}
+
+.arrow-icon {
+    margin-left: 15px;
+    font-size: 20px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* RESPONSIVIDADE (PARA NÃO BUGAR NO CELULAR) */
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .contact-content {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+    .contact-content h2 {
+        font-size: 30px;
+    }
+}
+
+

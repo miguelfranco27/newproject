@@ -3,232 +3,175 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Landing Page</title>
+  <title>Vant Construtora | Engenharia e Gestão</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="header">
     <div class="container header-content">
-      <div class="logo">LOGO</div>
+      <div class="logo">
+        <span class="logo-text">vant</span>
+      </div>
 
       <nav class="nav">
         <a href="#">Início</a>
-        <a href="#">Sobre</a>
-        <a href="#">Serviços</a>
-        <a href="#" class="btn">Contato</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato" class="btn btn-header">Contato</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO / PRINCIPAL -->
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
-      <h1>Lorem ipsum dolor sit amet</h1>
+      <h1>Construção e Reforma com <span class="highlight">Método e Organização</span></h1>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Sed do eiusmod tempor incididunt ut labore.
+        Execução de obras residenciais com metodologia estruturada, 
+        acompanhamento técnico e monitoramento completo de todas as fases do projeto.
       </p>
-      <a href="#" class="btn btn-primary">Peça um orçamento</a>
+      <div class="hero-btns">
+        <a href="#" class="btn btn-primary">Peça um orçamento</a>
+      </div>
     </div>
   </section>
 
-  <!-- APRESENTAÇÃO -->
-  <section class="about">
+  <section class="about" id="sobre">
     <div class="container about-grid">
-      
       <div class="about-text">
-        <h2>Lorem ipsum dolor</h2>
+        <span class="section-subtitle">O que fazemos</span>
+        <h2>Construção Residencial</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+          Execução de obras residenciais com planejamento técnico, organização 
+          e controle de qualidade em todas as etapas.
         </p>
         <p>
-          Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+          Desde o planejamento até a conclusão com supervisão técnica 
+          e prazos previamente organizados.
         </p>
       </div>
-
       <div class="about-image">
-        <img src="img/wallhaven-k762j7.png" alt="Sobre">
+        <img src="img/wallhaven-k762j7.png" alt="Construção residencial">
       </div>
-
     </div>
   </section>
 
-  <!-- SERVIÇOS -->
-  <section class="services">
+  <section class="impact-section">
+    <div class="impact-overlay"></div>
+    <div class="container impact-content">
+        <h2>Transformando projetos em realidade sólida</h2>
+        <p>
+            Na Vant, unimos engenharia de precisão com gestão inteligente. 
+            Construímos residências e galpões industriais focados em durabilidade e segurança.
+        </p>''
+        <div class="impact-divider"></div>
+    </div>
+  </section>
+
+  <section class="services" id="servicos">
     <div class="container">
-      <h2 class="section-title">Serviços</h2>
-
+      <h2 class="section-title">Nossos Serviços</h2>
+       <div class="impact-divider"></div>
       <div class="services-grid">
-
         <div class="service-card">
-          <img src="img/wallhaven-k762j7.png" alt="Serviço 1">
-          <h3>Serviço 1</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
+          <div class="card-img-container">
+            <img src="img/wallhaven-k762j7.png" alt="Construção Residencial">
+          </div>
+          <div class="card-content">
+            <h3>Construção Residencial</h3>
+            <p>Execução com metodologia estruturada e acompanhamento técnico completo.</p>
+            <a href="vejamais.html" class="btn-more">Veja Mais</a>
+          </div>
         </div>
-
         <div class="service-card">
-          <img src="img/wallhaven-k762j7.png" alt="Serviço 2">
-          <h3>Serviço 2</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
+          <div class="card-img-container">
+            <img src="img/wallhaven-k762j7.png" alt="Reformas">
+          </div>
+          <div class="card-content">
+            <h3>Reformas Gerais</h3>
+            <p>Reformas realizadas com método e padrão superior de acabamento.</p>
+            <a href="vejamais.html" class="btn-more">Veja Mais</a>
+          </div>
         </div>
-
         <div class="service-card">
-          <img src="img/wallhaven-k762j7.png" alt="Serviço 3">
-          <h3>Serviço 3</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
+          <div class="card-img-container">
+            <img src="img/wallhaven-k762j7.png" alt="Galpões">
+          </div>
+          <div class="card-content">
+            <h3>Galpões Metálicos</h3>
+            <p>Galpões em estrutura metálica com qualidade construtiva e organização.</p>
+            <a href="vejamais.html" class="btn-more">Veja Mais</a>
+          </div>
         </div>
-
       </div>
     </div>
   </section>
 
-
-
-
-
-   <!-- SERVIÇOS -->
-  <section class="services">
-    <div class="container">
-      <h2 class="section-title">Serviços</h2>
-
-      <div class="services-grid">
-
-        <div class="service-card">
-          <img src="img/wallhaven-k762j7.png" alt="Serviço 1">
-          <h3>Serviço 1</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <img src="img/wallhaven-k762j7.png" alt="Serviço 2">
-          <h3>Serviço 2</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <img src="img/wallhaven-k762j7.png" alt="Serviço 3">
-          <h3>Serviço 3</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
-        </div>
-
-
-
-        <div class="service-card">
-          <img src="img/wallhaven-k762j7.png" alt="Serviço 3">
-          <h3>Serviço 3</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
-        </div>
-
-
-
-
-        <div class="service-card">
-          <img src="img/wallhaven-k762j7.png" alt="Serviço 3">
-          <h3>Serviço 3</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
-        </div>
-
-
-
-
-
-        <div class="service-card">
-          <img src="img/wallhaven-k762j7.png" alt="Serviço 3">
-          <h3>Serviço 3</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
-        </div>
-
-
-
-
-
-
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-
-
-
-   <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-       <div class="service-card">
-          <img src="img/wallhaven-k762j7.png" alt="Serviço 3">
-          <h3>Serviço 3</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
-        </div>
-
-
-    </div>
-  </section>
-
-
-
-  <!-- QUALIDADE / DESTAQUE -->
   <section class="quality">
     <div class="quality-overlay"></div>
     <div class="container quality-content">
-      <h2>Lorem ipsum qualidade</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Sed do eiusmod tempor incididunt.
-      </p>
-
+      <h2>Compromisso com <span class="highlight-green">Qualidade</span></h2>
+      <p>Trabalhamos com gestão eficiente para garantir segurança e cumprimento de prazos.</p>
       <div class="quality-items">
         <div class="quality-item">
-          <h3>Equipe Profissional</h3>
-          <p>Lorem ipsum dolor sit amet.</p>
+          <div class="item-icon">01</div>
+          <h3>Acompanhamento</h3>
+          <p>Supervisão profissional em todas as fases.</p>
         </div>
-
         <div class="quality-item">
-          <h3>Qualidade Garantida</h3>
-          <p>Lorem ipsum dolor sit amet.</p>
+          <div class="item-icon">02</div>
+          <h3>Planejamento</h3>
+          <p>Organização do início até a entrega final.</p>
         </div>
-
         <div class="quality-item">
-          <h3>Gestão e Prazo</h3>
-          <p>Lorem ipsum dolor sit amet.</p>
+          <div class="item-icon">03</div>
+          <h3>Prazos</h3>
+          <p>Cronograma monitorado rigorosamente.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <section class="insta-section">
+      <div class="insta-overlay"></div>
+      <div class="container insta-container">
+          <div class="insta-card">
+              <div class="insta-grid">
+                  <div class="grid-item" style="background-image: url('img/wallhaven-k762j7.png')"></div>
+               <div class="insta-card-content">
+                  <span class="insta-handle">@VANT_CONSTRUTORA</span>
+                  <h3>Conheça de perto a nossa qualidade</h3>
+                  <a href="#" class="btn-insta">Seguir no Instagram</a>
+              </div>
+              </div>
+             
+          </div>
+      </div>
+  </section>
+
+  <section class="contact-banner">
+    <div class="contact-overlay"></div>
+    <div class="container contact-container">
+        <div class="contact-content">
+            <span class="contact-top-text">AGORA É COM A GENTE!</span>
+            <h2>Confie o seu projeto a quem entende</h2>
+            <p>Projetos sob medida, qualidade e acabamento profissional.</p>
+        </div>
+        <div class="contact-action">
+            <a href="#" class="btn-outline">
+                VAMOS CONVERSAR <span class="arrow-icon">→</span>
+            </a>
+        </div>
+    </div>
+</section>
   <footer class="footer">
-    <div class="container footer-content">
-      <p>© 2026 - Sua Empresa. Todos os direitos reservados.</p>
+    <div class="container">
+      <p>© 2026 Vant Construtora. Projetando o futuro com solidez.</p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
