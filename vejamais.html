@@ -5,22 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Serviços Detalhados | Vant Construtora</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"/> <style>
-    /* Estilos específicos para a página interna */
-    .page-header-internal {
-      padding: 80px 0 40px;
-      background: var(--light-gray);
-      text-align: center;
+  <style>
+    :root {
+      --primary-green: #1dd793;
+      --dark-bg: #0b0b0b;
+      --text-white: #ffffff;
+      --text-gray: #a0a0a0;
     }
 
-    .page-header-internal h1 {
-      font-size: 42px;
-      color: var(--dark-neutral);
-      margin-bottom: 15px;
+    body {
+      background-color: var(--dark-bg);
+      color: var(--text-white);
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      overflow-x: hidden;
     }
 
-    /* Layout Zigue-Zague Refinado */
-    .service-detail-section { padding: 80px 0; }
+    /* Container com margem generosa */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 8%; /* Aumentado para dar mais respiro nas laterais */
+    }
+
+    
+    /* SEÇÃO DE SERVIÇOS */
+    .service-detail-section { padding: 40px 0; }
     
     .detail-row { 
       display: flex; 
@@ -31,197 +41,372 @@
     
     .detail-row:nth-child(even) { flex-direction: row-reverse; }
 
-    .detail-image { flex: 1; position: relative; }
+    /* MOLDURA E IMAGEM */
+    .detail-image { flex: 1.1; position: relative; }
     
-    /* Moldura elegante para a imagem */
+    /* Moldura técnica ajustada para não cortar */
     .detail-image::after {
       content: '';
       position: absolute;
-      top: 20px;
-      left: 20px;
-      right: -20px;
-      bottom: -20px;
-      border: 2px solid var(--primary-green);
+      top: 12px;
+      left: 12px;
+      right: -12px;
+      bottom: -12px;
+      border: 1px solid var(--primary-green);
       z-index: -1;
       border-radius: 12px;
+      opacity: 0.4;
     }
 
     .detail-image img { 
       width: 100%; 
       border-radius: 12px; 
       display: block;
-      box-shadow: 0 15px 45px rgba(0,0,0,0.1);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
     }
 
     .detail-text { flex: 1; }
     
-    .detail-text .category-tag {
+    .category-tag {
       color: var(--primary-green);
       font-weight: 700;
-      font-size: 12px;
+      font-size: 10px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       display: block;
     }
 
     .detail-text h2 { 
-      font-size: 34px; 
+      font-size: clamp(24px, 4vw, 34px); 
       margin-bottom: 20px; 
-      color: var(--dark-neutral);
-      text-transform: lowercase; /* Seguindo o logo vant */
+      font-family: 'Montserrat', sans-serif;
+      text-transform: lowercase;
     }
 
-    .detail-text p { font-size: 18px; color: #666; margin-bottom: 25px; }
+    .detail-text p { 
+      font-size: 16px; 
+      color: var(--text-gray); 
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
     
-    .benefits-list { list-style: none; margin: 25px 0; }
+    /* LISTA DE BENEFÍCIOS */
+    .benefits-list { list-style: none; margin: 30px 0; padding: 0; }
     
     .benefits-list li { 
-      margin-bottom: 12px; 
+      margin-bottom: 15px; 
       display: flex; 
-      align-items: center; 
-      font-weight: 600;
-      color: var(--dark-neutral);
+      align-items: flex-start; 
+      color: #e0e0e0;
+      font-size: 14px;
     }
 
-    /* Ícone de check customizado em verde */
     .benefits-list li::before { 
-      content: 'L'; 
-      transform: scaleX(-1) rotate(-35deg); /* Gambiarra para um check elegante sem ícone externo */
+      content: '✓'; 
       color: var(--primary-green); 
       margin-right: 15px;
       font-weight: 900;
+      font-size: 16px;
     }
 
-    /* Botão estilo Pill da referência anterior */
+    /* BOTÃO REDUZIDO E AJUSTADO */
     .btn-pill {
       display: inline-flex;
       align-items: center;
-      padding: 15px 35px;
-      background: var(--dark-neutral);
+      justify-content: center;
+      padding: 12px 28px; /* Menor que o anterior */
+      background: #161616;
       color: #fff;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 700;
       border-radius: 50px;
-      font-size: 14px;
-      transition: 0.4s;
-      border: 2px solid var(--dark-neutral);
+      font-size: 11px; /* Letra menor para ficar mais premium */
+      transition: 0.3s ease;
+      border: 1px solid #333;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .btn-pill:hover {
       background: var(--primary-green);
+      color: #000;
       border-color: var(--primary-green);
-      transform: translateY(-3px);
     }
 
-   /* --- AJUSTES DE RESPONSIVIDADE (MOBILE FIRST) --- */
+    /* RESPONSIVIDADE FINAL */
+    @media (max-width: 850px) {
+      .container { padding: 0 10%; } /* Margem ainda maior em telas pequenas */
 
-@media (max-width: 900px) {
-    /* Ajuste do Título da Página */
-    .page-header-internal {
-        padding: 40px 0;
+      .detail-row {
+        flex-direction: column !important;
+        gap: 40px;
+        margin-bottom: 90px;
+      }
+
+      .detail-image { order: -1; width: 100%; }
+      
+      /* Ajuste para a moldura não sair da tela no mobile */
+      .detail-image::after {
+        right: -8px;
+        bottom: -8px;
+      }
+
+      .detail-text { text-align: left; width: 100%; }
+
+      .btn-pill { 
+        width: auto; /* Não ocupa a largura toda */
+        min-width: 200px; /* Mas tem um tamanho mínimo confortável */
+        display: flex;
+      }
+    }
+
+
+/* --- ESTRUTURA DO HEADER --- */
+    .navbar {
+      width: 100%;
+      height: 80px;
+      background: #0b0b0b; /* Cor de fundo do seu site */
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 2000;
+      border-bottom: 1px solid #1a1a1a;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .logo-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      color: #1dd793;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* O BOTÃO QUE VOCÊ QUERIA ARRUMAR */
+    .btn-contact {
+      background: #1dd793 !important;
+      color: #000 !important;
+      padding: 10px 22px !important;
+      border-radius: 6px !important;
+      font-weight: 700 !important;
+      text-transform: lowercase;
+    }
+
+    /* MENU TOGGLE (HAMBURGUER) */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 2px;
+      background: #1dd793;
+      transition: 0.3s;
+    }
+
+    /* RESPONSIVO: BARRA LATERAL SÓLIDA */
+    @media (max-width: 850px) {
+      .menu-toggle { display: flex; }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 65%;
+        height: 100vh;
+        background: #000; /* Fundo preto sólido */
+        flex-direction: column;
+        justify-content: center;
+        transition: 0.4s ease-in-out;
+        gap: 35px;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+      }
+
+      .nav-links.active { right: 0; }
+      
+      .nav-links .btn-contact {
+        width: 140px; /* Tamanho do botão no mobile */
+        text-align: center;
+      }
+
+      .menu-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+      .menu-toggle.open span:nth-child(2) { opacity: 0; }
+      .menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+    }
+
+
+    
+  /* FOOTER PREMIUM DARK */
+.footer-premium {
+    background-color: #050505; /* Um preto ainda mais profundo */
+    padding: 80px 0 0;
+    border-top: 1px solid #1a1a1a;
+    color: #fff;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; /* Coluna da logo maior */
+    gap: 60px;
+    padding-bottom: 60px;
+}
+
+.footer-column h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    color: var(--primary-green);
+}
+
+.footer-column p {
+    color: #888;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 12px;
+    color: #888;
+    font-size: 14px;
+}
+
+.footer-column ul li a {
+    color: #888;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: var(--primary-green);
+    padding-left: 5px;
+}
+
+/* ÍCONES SOCIAIS CIRCULARES */
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.social-icon {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.social-icon:hover {
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+    transform: translateY(-3px);
+}
+
+/* BARRA DE DIREITOS RESERVADOS */
+.footer-bottom {
+    border-top: 1px solid #1a1a1a;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
     }
     
-    .page-header-internal h1 {
-        font-size: 28px; /* Diminuído para não quebrar linha bruscamente */
+    .footer-column p {
+        margin: 0 auto;
     }
-
-    /* Ajuste das Linhas de Serviço */
-    .detail-row {
-        flex-direction: column !important; /* Força empilhamento */
-        gap: 30px;
-        margin-bottom: 60px;
-        padding: 0 10px; /* Evita que o texto encoste na borda da tela */
-    }
-
-    .detail-text {
-        text-align: left; /* Mantém a leitura natural */
-        width: 100%;
-    }
-
-    .detail-text h2 {
-        font-size: 24px; /* Título menor para mobile */
-        margin-bottom: 15px;
-    }
-
-    .detail-text p {
-        font-size: 16px;
-    }
-
-    /* Ajuste das Imagens */
-    .detail-image {
-        width: 100%;
-        order: -1; /* Garante que a imagem apareça ANTES do texto no mobile */
-    }
-
-    .detail-image::after {
-        display: none; /* Remove a moldura verde no mobile para evitar overflow lateral */
-    }
-
-    /* Ajuste do Botão Pill (Para não ocupar a tela toda) */
-    .btn-pill {
-        display: inline-flex;
-        width: auto; /* Não deixa o botão virar um bloco gigante */
+    
+    .footer-social {
         justify-content: center;
-        padding: 12px 25px;
-        font-size: 13px;
-    }
-
-    /* Lista de Benefícios */
-    .benefits-list li {
-        font-size: 15px;
     }
 }
 
-/* Ajuste específico para celulares muito pequenos (iPhone SE, etc) */
-@media (max-width: 400px) {
-    .page-header-internal h1 {
-        font-size: 24px;
-    }
-    .detail-text h2 {
-        font-size: 22px;
-    }
-}
+
+
+/* HEADER DARK */
+.header { background: #000; padding: 20px 0; position: sticky; top: 0; z-index: 100; }
+.header-content { display: flex; justify-content: space-between; align-items: center; }
+.logo-text { font-family: 'Montserrat'; font-weight: 800; color: var(--vant-green); font-size: 26px; }
+.nav a { color: #fff; text-decoration: none; margin-left: 25px; font-weight: 600; font-size: 14px; }
+.btn-header { background: var(--vant-green); padding: 10px 20px !important; border-radius: 5px; }
+
   </style>
 </head>
 <body>
 
+    
   <header class="header">
     <div class="container header-content">
       <div class="logo"><span class="logo-text">vant</span></div>
       <nav class="nav">
-        <a href="index.html">Início</a>
-        <a href="index.html#servicos">Serviços</a>
-        <a href="index.html#contato" class="btn btn-header">Contato</a>
+       
       </nav>
     </div>
   </header>
-
-  <section class="page-header-internal">
-    <div class="container">
-        <span class="section-subtitle">Excelência técnica</span>
-        <h1>nossos serviços</h1>
-        <div class="impact-divider"></div>
-    </div>
-  </section>
-
-  <div class="container service-detail-section">
+  <main class="container service-detail-section">
     
     <div class="detail-row">
       <div class="detail-text">
         <span class="category-tag">Residencial & Comercial</span>
         <h2>reformas em geral</h2>
-        <p>Transformamos espaços obsoletos em ambientes modernos e funcionais, com foco em acabamento de alto padrão.</p>
+        <p>Transformamos espaços obsoletos em ambientes modernos e funcionais, com foco em acabamento de alto padrão e inteligência espacial.</p>
         <ul class="benefits-list">
           <li>Modernização completa de ambientes</li>
           <li>Adequação de layouts inteligentes</li>
           <li>Melhoria da eficiência funcional</li>
           <li>Valorização imediata do imóvel</li>
         </ul>
-        <a href="index.html#contato" class="btn-pill">Solicitar Orçamento</a>
+        <a href="#contato" class="btn-pill">Solicitar Orçamento</a>
       </div>
       <div class="detail-image">
-        <img src="img/wallhaven-k762j7.png" alt="Reformas Vant">
+        <img src="img/casa.jpg" alt="Reformas Vant">
       </div>
     </div>
 
@@ -229,31 +414,78 @@
       <div class="detail-text">
         <span class="category-tag">Engenharia</span>
         <h2>instalações elétricas</h2>
-        <p>Segurança e conformidade técnica em projetos elétricos complexos para residências e indústrias.</p>
+        <p>Segurança e conformidade técnica em projetos elétricos complexos. Garantimos estabilidade e tecnologia para sua obra.</p>
         <ul class="benefits-list">
           <li>Conformidade total com normas NBR</li>
           <li>Projetos de eficiência energética</li>
           <li>Instalações de alta durabilidade</li>
           <li>Suporte técnico especializado</li>
         </ul>
-        <a href="index.html#contato" class="btn-pill">Consultar Engenheiro</a>
+        <a href="#contato" class="btn-pill">Consultar Engenheiro</a>
       </div>
       <div class="detail-image">
-        <img src="img/wallhaven-k762j7.png" alt="Elétrica Vant">
+        <img src="img/casa.jpg" alt="Elétrica Vant">
       </div>
     </div>
 
-
-
-    
-
-  </div>
-
-  <footer class="footer">
-    <div class="container">
-      <p>© 2026 vant construtora. todos os direitos reservados.</p>
+    <div class="detail-row">
+      <div class="detail-text">
+        <span class="category-tag">Gestão Técnica</span>
+        <h2>gerenciamento de obras</h2>
+        <p>Administração completa do canteiro, desde a compra de insumos até a entrega das chaves, garantindo o custo-benefício e o cronograma.</p>
+        <ul class="benefits-list">
+          <li>Controle rigoroso de custos e desperdícios</li>
+          <li>Gestão de equipes e fornecedores</li>
+          <li>Relatórios semanais de evolução</li>
+          <li>Garantia do cumprimento de prazos</li>
+        </ul>
+        <a href="#contato" class="btn-pill">Saber Mais</a>
+      </div>
+      <div class="detail-image">
+        <img src="img/casa.jpg" alt="Gestão de Obras Vant">
+      </div>
     </div>
-  </footer>
+
+  </main>
+
+  <footer class="footer-premium">
+    <div class="container footer-grid">
+        <div class="footer-column bio">
+            <div class="logo"><span class="logo-text">vant</span></div>
+            <p>Engenharia de precisão e gestão inteligente para transformar projetos em realidades sólidas.</p>
+            <div class="footer-social">
+                <a href="#" class="social-icon">IG</a>
+                <a href="#" class="social-icon">WA</a>
+                <a href="#" class="social-icon">LI</a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>navegação</h3>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#servicos">Serviços</a></li>
+                <li><a href="index.html#sobre">Sobre Nós</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>contato</h3>
+            <ul>
+                <li><span class="txt-verde">E:</span> contato@vant.com.br</li>
+                <li><span class="txt-verde">T:</span> (11) 99999-9999</li>
+                <li>Sua Cidade - SP</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <p>© 2026 <span class="txt-verde">vant construtora</span>. todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
