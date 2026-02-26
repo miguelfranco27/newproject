@@ -19,7 +19,7 @@ body { font-family: 'Open Sans', sans-serif; background: #fff; color: #333; }
 
 /* HERO IGUAL A FOTO */
 .hero { 
-  height: 70vh; 
+  height: 60vh; 
   background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url('img/hc.png') center/cover;
   display: flex; align-items: center; color: #fff;
 }
@@ -29,9 +29,9 @@ body { font-family: 'Open Sans', sans-serif; background: #fff; color: #333; }
 .btn-primary {  margin-top: 20px;
   background: var(--vant-green); color: #fff; text-decoration: none; 
   padding: 15px 35px; border-radius: 5px; font-weight: 700; display: inline-block;
-  box-shadow: 0 10px 20px rgba(29, 215, 147, 0.3);
+ 
 }
-
+.btn-primary:hover{ background-color: black;}
 
 /* SEÇÃO QUALIDADE */
 .quality-section {
@@ -118,12 +118,12 @@ body { font-family: 'Open Sans', sans-serif; background: #fff; color: #333; }
 }
 
 /* SEÇÃO SOBRE */
-.about { padding: 100px 0; background: #f9f9f9; }
+.about { padding: 100px 0; background: #000000; }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
 .section-subtitle { color: var(--vant-green); font-weight: 700; text-transform: uppercase; font-size: 20px; letter-spacing: 2px; }
-.about-text h2 { font-family: 'Montserrat'; font-size: 36px; text-transform: lowercase; margin: 15px 0; }
+.about-text h2 { font-family: 'Montserrat'; color: white; font-size: 36px; text-transform: lowercase; margin: 15px 0; }
 .about-image img { width: 100%; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-
+.paragrafo{color:white}
 /* SEÇÃO SERVIÇOS DARK (COMO NA FOTO 3) */
 .services-dark { background: var(--dark-bg); padding: 100px 0; color: #fff; }
 .section-title-white { font-family: 'Montserrat'; text-align: center; font-size: 32px; text-transform: lowercase; margin-bottom: 50px; }
