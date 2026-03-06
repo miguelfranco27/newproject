@@ -1,260 +1,75 @@
 :root {
   --vant-green: #1dd793;
-  --dark-bg: #0f0f0f;
-  --card-bg: #1a1a1a;
-  --text-light: #e0e0e0;
+  --dark-bg: #111111;
+  --border-color: #f0f0f0;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Open Sans', sans-serif; background: #fff; color: #333; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Questrial', sans-serif; }
+body { background: #fff; color: #333; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; transition: 0.3s; }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.container { max-width: 1400px; margin: 0 auto; padding: 0 25px; }
 
-/* HEADER DARK */
-.header { background: #000; padding: 20px 0; position: sticky; top: 0; z-index: 100; }
+/* HEADER */
+.header { position: absolute; top: 0; width: 100%; padding: 30px 0; z-index: 1000; }
 .header-content { display: flex; justify-content: space-between; align-items: center; }
-.logo-text { font-family: 'Montserrat'; font-weight: 800; color: var(--vant-green); font-size: 26px; }
-.nav a { color: #fff; text-decoration: none; margin-left: 25px; font-weight: 600; font-size: 14px; }
-.btn-header { background: var(--vant-green); padding: 10px 20px !important; border-radius: 5px; }
+.logo { font-weight: 800; color: var(--vant-green); font-size: 32px; }
+.nav { display: flex; align-items: center; gap: 40px; }
+.nav a { color: #fff; font-size: 15px; }
+.btn-contato { background: #fff; color: #000 !important; padding: 12px 25px; border-radius: 10px; font-weight: 600; }
 
-/* HERO IGUAL A FOTO */
-.hero { 
-  height: 60vh; 
-  background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url('img/hc.png') center/cover;
+/* HERO - CORRIGIDO */
+.hero {
+  height: 86vh;
+  background: linear-gradient(to right, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.2)), url('images/hero.jpg') center/cover;
   display: flex; align-items: center; color: #fff;
+
 }
-.hero-content { max-width: 650px; }
-.hero h1 { font-family: 'Montserrat'; font-size: 48px; text-transform: lowercase; line-height: 1.1; margin-bottom: 20px; }
+.hero h1 { font-size: clamp(40px, 6vw, 65px); max-width: 800px; line-height: 1.1; margin-bottom: 25px; }
 .highlight { color: var(--vant-green); }
-.btn-primary {  margin-top: 20px;
-  background: var(--vant-green); color: #fff; text-decoration: none; 
-  padding: 15px 35px; border-radius: 5px; font-weight: 700; display: inline-block;
- 
-}
-.btn-primary:hover{ background-color: black;}
+.hero p { font-size: 18px; max-width: 500px; margin-bottom: 35px; opacity: 0.9; }
+.btn-orcamento { background: var(--vant-green); color: #000; padding: 18px 35px; border-radius: 12px; font-weight: 700; }
 
-/* SEÇÃO QUALIDADE */
-.quality-section {
-    background-color: #111; /* Fundo escuro como na imagem */
-    color: #ffffff;
-    padding: 100px 0;
-}
+/* ABOUT */
+.about { padding: 100px 0; border-bottom: solid rgba(131, 129, 129, 0.363) 1px; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.about-image img { width: 100%; border-radius: 30px; }
+.section-subtitle { color: var(--vant-green); text-transform: uppercase; font-weight: 700; font-size: 14px; margin-bottom: 10px; display: block; }
+.about-text h2 { font-size: 40px; margin-bottom: 20px; }
+.paragrafo { font-size: 18px; color: #666; margin-bottom: 30px; line-height: 1.6; }
 
-.quality-header {
+/* SERVICES */
+.services-dark { padding: 80px 0; border-bottom: solid rgba(131, 129, 129, 0.363) 1px; }
+.section-title { text-align: center; font-size: 35px; margin-bottom: 50px; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+.service-card-premium { /* Ponto principal: O estado inicial da animação */
+    transition: all 0.4s ease-in-out; /* Define a suavidade (duração e tipo) */
     
-    margin-bottom: 60px;
-}
+    /* Adiciona uma sombra leve e sutil no estado normal */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+    
+    /* Garante que o card possa se mover sem afetar o layout */
+    transform: translateY(0);position: relative; height: 450px; border-radius: 30px; overflow: hidden; }
+.service-card-premium img { width: 100%;  object-fit: contain; }
+.card-overlay { position: absolute; inset: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 35px; display: flex; flex-direction: column; justify-content: flex-end; }
+.card-overlay h3 { color: var(--vant-green); margin-bottom: 10px; }
+.btn-link { text-decoration: none; /* Remove o sublinhado */
+    color: inherit;       /* Mantém a cor que você já tinha definido */
+    display: inline-block; color: #fff; font-weight: 600; }
 
-.quality-header h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-    text-transform: lowercase;
+
+    
+/* QUALITY */
+.quality-section { padding: 100px 0; background: #fafafa; border-bottom: solid rgba(131, 129, 129, 0.363) 1px; }
+.quality-header { text-align: center; margin-bottom: 60px; }
+.quality-header h2{
     margin-bottom: 10px;
 }
+.quality-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.quality-item { background: var(--dark-bg); padding: 50px 35px; border-radius: 25px; color: #fff; }
+.quality-number { color: var(--vant-green); font-size: 35px; font-weight: 800; margin-bottom: 20px; display: block; }
 
-.quality-header .highlight {
-    color: #1dd793; /* Verde Vant */
-}
-
-.quality-header p {
-    font-size: 16px;
-    color: #cccccc;
-    max-width: 600px;
-}
-
-/* GRID DE ITENS */
-.quality-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas no desktop */
-    gap: 40px;
-}
-
-.quality-item {
-    display: flex;
-    flex-direction: column;
-}
-
-.quality-number {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 40px;
-    font-weight: 800;
-    color: #1dd793;
-    margin-bottom: 15px;
-}
-
-.quality-item h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: lowercase;
-    margin-bottom: 10px;
-}
-
-.quality-item p {
-    font-size: 14px;
-    color: #999999;
-    line-height: 1.5;
-}
-
-/* RESPONSIVIDADE PARA CELULAR */
-@media (max-width: 768px) {
-    .quality-grid {
-        grid-template-columns: 1fr; /* 1 coluna no celular */
-        gap: 50px;
-    }
-    
-    .quality-header {
-        text-align: center;
-    }
-    
-    .quality-header p {
-        margin: 0 auto;
-    }
-
-    .quality-item {
-        text-align: left;
-    }
-}
-
-/* SEÇÃO SOBRE */
-.about { padding: 100px 0; background: #000000; }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-.section-subtitle { color: var(--vant-green); font-weight: 700; text-transform: uppercase; font-size: 20px; letter-spacing: 2px; }
-.about-text h2 { font-family: 'Montserrat'; color: white; font-size: 36px; text-transform: lowercase; margin: 15px 0; }
-.about-image img { width: 100%; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-.paragrafo{color:white}
-/* SEÇÃO SERVIÇOS DARK (COMO NA FOTO 3) */
-.services-dark { background: var(--dark-bg); padding: 100px 0; color: #fff; }
-.section-title-white { font-family: 'Montserrat'; text-align: center; font-size: 32px; text-transform: lowercase; margin-bottom: 50px; }
-
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-
-.service-card-premium { 
-  background: var(--card-bg); border-radius: 15px; overflow: hidden; 
-  transition: 0.3s; border-bottom: 3px solid transparent;
-}
-.service-card-premium:hover { transform: translateY(-10px); border-color: var(--vant-green); }
-.card-img img { width: 100%; height: 200px; object-fit: cover; opacity: 0.8; }
-.card-info { padding: 25px; }
-.card-info h3 { font-family: 'Montserrat'; text-transform: lowercase; margin-bottom: 10px; }
-.card-info p { font-size: 14px; color: #aaa; margin-bottom: 20px; }
-.btn-link { color: var(--vant-green); text-decoration: none; font-weight: 700; }
-
-/* BANNER FINAL */
-.contact-banner { background: #000; padding: 60px 0; border-top: 1px solid #333; }
-.contact-flex { display: flex; justify-content: space-between; align-items: center; }
-.contact-flex h2 { color: #fff; font-family: 'Montserrat'; text-transform: lowercase; max-width: 500px; }
-.btn-outline-green { 
-  border: 2px solid var(--vant-green); color: var(--vant-green); 
-  padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: 700;
-}
-
-/* RESPONSIVIDADE (MOBILE) */
-@media (max-width: 768px) {
-  .hero h1 { font-size: 32px; }
-  .about-grid, .contact-flex { grid-template-columns: 1fr; flex-direction: column; text-align: center; }
-  .contact-flex h2 { margin-bottom: 30px; }
-  .nav { display: none; } /* Pode trocar por um menu hamburguer depois */
-}
-
-
-/* BANNER DE CONTATO PREMIUM */
-.contact-banner-premium {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); /* Fundo escuro com gradiente */
-    padding: 100px 0;
-    border-top: 1px solid #333;
-    position: relative;
-    overflow: hidden;
-}
-
-.contact-flex-layout {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-}
-
-.tag-verde {
-    color: #1dd793;
-    font-size: 12px;
-    letter-spacing: 3px;
-    font-weight: 700;
-    display: block;
-    margin-bottom: 15px;
-}
-
-.contact-text-box h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 42px;
-    color: #fff;
-    text-transform: lowercase;
-    line-height: 1.2;
-    margin-bottom: 15px;
-}
-
-.txt-verde {
-    color: #1dd793;
-}
-
-.contact-text-box p {
-    color: #aaa;
-    font-size: 18px;
-    font-weight: 300;
-}
-
-/* BOTÃO ESTILO CÁPSULA COM SETA */
-.btn-cta-premium {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 18px 40px;
-    border: 2px solid #fff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 100px; /* Estilo cápsula da foto */
-    font-weight: 700;
-    font-size: 14px;
-    transition: all 0.4s ease;
-}
-
-.btn-cta-premium:hover {
-    background-color: #1dd793;
-    border-color: #1dd793;
-    transform: scale(1.05);
-}
-
-.icon-seta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 50%;
-    font-size: 18px;
-}
-
-/* AJUSTE PARA CELULAR */
-@media (max-width: 900px) {
-    .contact-flex-layout {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .contact-text-box h2 {
-        font-size: 32px;
-    }
-    
-    .btn-cta-premium {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-
-
-/* SEÇÃO INSTAGRAM PREMIUM DARK */
+/* INSTAGRAM - CORRIGIDO */
 .instagram-section-premium {
     padding: 100px 0;
     background-color: white;
@@ -266,7 +81,7 @@ body { font-family: 'Open Sans', sans-serif; background: #fff; color: #333; }
     overflow: hidden;
     display: flex;
     align-items: center;
-    max-width: 900px; color: white;
+    max-width: 900px; color: rgb(0, 0, 0);
     margin: 0 auto;
     border: none;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.324);
@@ -306,7 +121,7 @@ body { font-family: 'Open Sans', sans-serif; background: #fff; color: #333; }
 }
 
 .insta-content h2 {
-    font-family: 'Montserrat', sans-serif;
+  
     font-size: 32px;
     margin: 10px 0 20px;
     line-height: 1.2;
@@ -324,20 +139,22 @@ body { font-family: 'Open Sans', sans-serif; background: #fff; color: #333; }
     display: inline-block;
     padding: 14px 30px;
     border: 1px solid var(--primary-green);
-    color: #000000;
+    
     text-decoration: none;
-    background-color: #1DD793;
+  
     border-radius: 50px;
     font-weight: 700;
     font-size: 13px;
     transition: all 0.4s ease;
     text-align: center;
+
+   background-color: #000000;
+    color: #ffffff;
 }
 
 .btn-insta-outline:hover {
-    background: rgb(255, 255, 255);
-    color: #1b231e;
-  
+   color: #000000;   background-color: #1DD793;
+    
     transform: translateY(-3px);
 }
 
@@ -361,109 +178,106 @@ body { font-family: 'Open Sans', sans-serif; background: #fff; color: #333; }
         width: 100%;
     }
 }
-
-/* FOOTER PREMIUM DARK */
-.footer-premium {
-    background-color: #050505; /* Um preto ainda mais profundo */
-    padding: 80px 0 0;
-    border-top: 1px solid #1a1a1a;
-    color: #fff;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr; /* Coluna da logo maior */
-    gap: 60px;
-    padding-bottom: 60px;
-}
-
-.footer-column h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 25px;
-    color: var(--primary-green);
-}
-
-.footer-column p {
-    color: #888;
-    line-height: 1.6;
-    max-width: 300px;
-}
-
-.footer-column ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-column ul li {
-    margin-bottom: 12px;
-    color: #888;
-    font-size: 14px;
-}
-
-.footer-column ul li a {
-    color: #888;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.footer-column ul li a:hover {
-    color: var(--primary-green);
-    padding-left: 5px;
-}
-
-/* ÍCONES SOCIAIS CIRCULARES */
-.footer-social {
-    display: flex;
-    gap: 15px;
-    margin-top: 25px;
-}
-
-.social-icon {
-    width: 35px;
-    height: 35px;
-    border: 1px solid #333;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    font-weight: 700;
-    color: #fff;
-    text-decoration: none;
-    transition: 0.4s;
-}
-
-.social-icon:hover {
-    border-color: var(--primary-green);
-    color: var(--primary-green);
-    transform: translateY(-3px);
-}
-
-/* BARRA DE DIREITOS RESERVADOS */
-.footer-bottom {
-    border-top: 1px solid #1a1a1a;
-    padding: 30px 0;
+/* CONTACT BANNER */
+/* BANNER DE CONTATO PREMIUM */
+.contact-banner-premium {
+    /* Mantenha o background com imagem e overlay escuro que funcionou */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
+                url('img/hc.png'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 100px 20px;
     text-align: center;
-    font-size: 12px;
-    color: #555;
+    display: flex;
+    justify-content: center;
 }
 
-/* RESPONSIVIDADE */
+.contact-flex-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Título principal em BRANCO */
+.contact-text-box h2 {
+    font-size: 48px;
+    color: #ffffff; /* Todo o título fica branco por padrão */
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+/* === NOVO: Classe para deixar apenas o span em VERDE === */
+.txt-verde {
+    color: #1dd793 !important; /* Cor verde da referência aplicada só aqui */
+}
+
+/* === CORREÇÃO: Parágrafo mais claro para não ficar "apagado" === */
+.contact-text-box p {
+    color: #f5f5f5; /* Um branco-sujo/cinza muito claro para máximo contraste */
+    font-size: 20px; /* Aumentado um pouco para facilitar a leitura */
+    font-weight: 300;
+    max-width: 600px; /* Limita a largura para melhor leitura */
+    margin: 0 auto; /* Centraliza o parágrafo */
+}
+
+/* Botão e responsividade (mantenha os ajustes anteriores que funcionaram) */
+.btn-cta-premium {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 45px;
+    border: 1.5px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 400;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+}
+
+.btn-cta-premium:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.tag-verde {
+    color: #1dd793;
+    font-size: 14px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 15px;
+}
+
 @media (max-width: 768px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        text-align: center;
-    }
-    
-    .footer-column p {
-        margin: 0 auto;
-    }
-    
-    .footer-social {
-        justify-content: center;
-    }
+    .contact-text-box h2 { font-size: 32px; }
+    .contact-text-box p { font-size: 16px; }
+    .btn-cta-premium { width: 100%; justify-content: center; }
+}
+
+/* FOOTER */
+.footer-premium { background: #000; color: #fff; padding: 80px 0 40px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; margin-bottom: 50px; }
+.footer-column h3 { color: var(--vant-green); text-transform: uppercase; font-size: 14px; margin-bottom: 20px; }
+.footer-column ul { list-style: none; }
+.footer-column li { margin-bottom: 12px; opacity: 0.7; }
+
+/* MOBILE */
+.menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.bar { width: 25px; height: 3px; background: #fff; transition: 0.3s; }
+
+@media (max-width: 900px) {
+    .menu-toggle { display: flex; z-index: 1100; }
+    .nav { position: fixed; top: 0; right: -100%; background: #000; width: 70%; height: 100vh; flex-direction: column; justify-content: center; transition: 0.4s; }
+    .nav.active { right: 0; }
+    .about-grid, .services-grid, .quality-grid, .footer-grid, .insta-card { grid-template-columns: 1fr; }
+    .insta-image-wrapper { min-height: 300px; }
+    .insta-content { padding: 40px 25px; text-align: center; align-items: center; }
 }

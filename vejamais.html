@@ -8,29 +8,79 @@
   <style>
     :root {
       --primary-green: #1dd793;
-      --dark-bg: #0b0b0b;
-      --text-white: #ffffff;
-      --text-gray: #a0a0a0;
+      --light-bg: #ffffff;
+      --text-black: #000000;
+      --text-dark-gray: #333333;
     }
 
     body {
-      background-color: var(--dark-bg);
-      color: var(--text-white);
+      background-color: var(--light-bg);
+      color: var(--text-black);
       margin: 0;
       font-family: 'Open Sans', sans-serif;
       overflow-x: hidden;
     }
 
-    /* Container com margem generosa */
     .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 0 8%; /* Aumentado para dar mais respiro nas laterais */
+      padding: 0 8%;
     }
 
-    
-    /* SEÇÃO DE SERVIÇOS */
-    .service-detail-section { padding: 40px 0; }
+    /* --- HEADER RESTAURADO --- */
+    .header {
+      background: var(--light-bg);
+      height: 80px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 2000;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .logo-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      color: var(--primary-green);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-black);
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .btn-contact {
+      background: var(--primary-green) !important;
+      color: #000 !important;
+      padding: 10px 22px !important;
+      border-radius: 6px !important;
+      font-weight: 700 !important;
+      text-transform: lowercase;
+    }
+
+    /* --- SEÇÃO DE SERVIÇOS --- */
+    .service-detail-section { padding: 120px 0 40px; } /* Padding top para compensar o header fixo */
     
     .detail-row { 
       display: flex; 
@@ -41,10 +91,8 @@
     
     .detail-row:nth-child(even) { flex-direction: row-reverse; }
 
-    /* MOLDURA E IMAGEM */
     .detail-image { flex: 1.1; position: relative; }
     
-    /* Moldura técnica ajustada para não cortar */
     .detail-image::after {
       content: '';
       position: absolute;
@@ -55,14 +103,14 @@
       border: 1px solid var(--primary-green);
       z-index: -1;
       border-radius: 12px;
-      opacity: 0.4;
+      opacity: 0.6;
     }
 
     .detail-image img { 
       width: 100%; 
       border-radius: 12px; 
       display: block;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
     }
 
     .detail-text { flex: 1; }
@@ -82,23 +130,23 @@
       margin-bottom: 20px; 
       font-family: 'Montserrat', sans-serif;
       text-transform: lowercase;
+      color: var(--text-black);
     }
 
     .detail-text p { 
       font-size: 16px; 
-      color: var(--text-gray); 
+      color: var(--text-dark-gray);
       line-height: 1.7;
       margin-bottom: 25px;
     }
     
-    /* LISTA DE BENEFÍCIOS */
     .benefits-list { list-style: none; margin: 30px 0; padding: 0; }
     
     .benefits-list li { 
       margin-bottom: 15px; 
       display: flex; 
       align-items: flex-start; 
-      color: #e0e0e0;
+      color: var(--text-dark-gray);
       font-size: 14px;
     }
 
@@ -110,286 +158,216 @@
       font-size: 16px;
     }
 
-    /* BOTÃO REDUZIDO E AJUSTADO */
     .btn-pill {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 12px 28px; /* Menor que o anterior */
-      background: #161616;
-      color: #fff;
+      padding: 12px 28px;
+      background: #1dd793;
+    color: black;
       text-decoration: none;
       font-weight: 700;
       border-radius: 50px;
-      font-size: 11px; /* Letra menor para ficar mais premium */
+      font-size: 11px;
       transition: 0.3s ease;
-      border: 1px solid #333;
+     
       text-transform: uppercase;
       letter-spacing: 1px;
     }
 
     .btn-pill:hover {
-      background: var(--primary-green);
-      color: #000;
+      background: black;
+      color: #ffffff;
       border-color: var(--primary-green);
     }
 
-    /* RESPONSIVIDADE FINAL */
-    @media (max-width: 850px) {
-      .container { padding: 0 10%; } /* Margem ainda maior em telas pequenas */
+    
 
-      .detail-row {
-        flex-direction: column !important;
-        gap: 40px;
-        margin-bottom: 90px;
-      }
-
-      .detail-image { order: -1; width: 100%; }
-      
-      /* Ajuste para a moldura não sair da tela no mobile */
-      .detail-image::after {
-        right: -8px;
-        bottom: -8px;
-      }
-
-      .detail-text { text-align: left; width: 100%; }
-
-      .btn-pill { 
-        width: auto; /* Não ocupa a largura toda */
-        min-width: 200px; /* Mas tem um tamanho mínimo confortável */
-        display: flex;
-      }
+    .tag-verde {
+      color: var(--primary-green);
+      font-size: 14px;
+      letter-spacing: 3px;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 15px;
     }
 
+    .txt-verde { color: var(--primary-green) !important; }
 
-/* --- ESTRUTURA DO HEADER --- */
-    .navbar {
-      width: 100%;
-      height: 80px;
-      background: #0b0b0b; /* Cor de fundo do seu site */
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 2000;
-      border-bottom: 1px solid #1a1a1a;
-      display: flex;
-      align-items: center;
+    /* --- FOOTER --- */
+    .footer-premium {
+      background-color: #000000;
+      padding: 80px 0 0;
+    
     }
 
-    .nav-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 60px;
     }
 
-    .logo-text {
+    .footer-column h3 {
       font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-      font-size: 24px;
-      color: #1dd793;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: var(--primary-green);
+      margin-bottom: 25px;
+    }
+
+    .footer-column p, .footer-column ul li, .footer-column ul li a {
+      color: white;
       text-decoration: none;
+      font-size: 14px;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 30px;
-      align-items: center;
+    .footer-bottom {
+ 
+      padding: 30px 0;
+      text-align: center;
+      font-size: 12px;
+      color: #999;
     }
 
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    /* O BOTÃO QUE VOCÊ QUERIA ARRUMAR */
-    .btn-contact {
-      background: #1dd793 !important;
-      color: #000 !important;
-      padding: 10px 22px !important;
-      border-radius: 6px !important;
-      font-weight: 700 !important;
-      text-transform: lowercase;
-    }
-
-    /* MENU TOGGLE (HAMBURGUER) */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 6px;
-      cursor: pointer;
-    }
-
-    .menu-toggle span {
-      width: 25px;
-      height: 2px;
-      background: #1dd793;
-      transition: 0.3s;
-    }
-
-    /* RESPONSIVO: BARRA LATERAL SÓLIDA */
+    /* --- RESPONSIVIDADE E MENU MOBILE --- */
     @media (max-width: 850px) {
-      .menu-toggle { display: flex; }
-
       .nav-links {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 65%;
+        width: 70%;
         height: 100vh;
-        background: #000; /* Fundo preto sólido */
+        background: #fff;
         flex-direction: column;
         justify-content: center;
-        transition: 0.4s ease-in-out;
-        gap: 35px;
-        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+        transition: 0.4s;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.05);
       }
 
       .nav-links.active { right: 0; }
-      
-      .nav-links .btn-contact {
-        width: 140px; /* Tamanho do botão no mobile */
-        text-align: center;
-      }
 
-      .menu-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
-      .menu-toggle.open span:nth-child(2) { opacity: 0; }
-      .menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
-    }
-
-
+      .detail-row { flex-direction: column !important; text-align: center; gap: 40px; }
+      .detail-image::after { display: none; }
+      .benefits-list li { justify-content: center; }
     
-  /* FOOTER PREMIUM DARK */
-.footer-premium {
-    background-color: #050505; /* Um preto ainda mais profundo */
-    padding: 80px 0 0;
-    border-top: 1px solid #1a1a1a;
-    color: #fff;
+    } 
+
+ 
+/* MOBILE */
+.menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.bar { width: 25px; height: 3px; background: #fff; transition: 0.3s; }
+
+@media (max-width: 900px) {
+    .menu-toggle { display: flex; z-index: 1100; }
+    .nav { position: fixed; top: 0; right: -100%; background: #000; width: 70%; height: 100vh; flex-direction: column; justify-content: center; transition: 0.4s; }
+    .nav.active { right: 0; }
+    .about-grid, .services-grid, .quality-grid, .footer-grid, .insta-card { grid-template-columns: 1fr; }
+    .insta-image-wrapper { min-height: 300px; }
+    .insta-content { padding: 40px 25px; text-align: center; align-items: center; }
 }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr; /* Coluna da logo maior */
-    gap: 60px;
-    padding-bottom: 60px;
-}
 
-.footer-column h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 25px;
-    color: var(--primary-green);
-}
-
-.footer-column p {
-    color: #888;
-    line-height: 1.6;
-    max-width: 300px;
-}
-
-.footer-column ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-column ul li {
-    margin-bottom: 12px;
-    color: #888;
-    font-size: 14px;
-}
-
-.footer-column ul li a {
-    color: #888;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.footer-column ul li a:hover {
-    color: var(--primary-green);
-    padding-left: 5px;
-}
-
-/* ÍCONES SOCIAIS CIRCULARES */
-.footer-social {
-    display: flex;
-    gap: 15px;
-    margin-top: 25px;
-}
-
-.social-icon {
-    width: 35px;
-    height: 35px;
-    border: 1px solid #333;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    font-weight: 700;
-    color: #fff;
-    text-decoration: none;
-    transition: 0.4s;
-}
-
-.social-icon:hover {
-    border-color: var(--primary-green);
-    color: var(--primary-green);
-    transform: translateY(-3px);
-}
-
-/* BARRA DE DIREITOS RESERVADOS */
-.footer-bottom {
-    border-top: 1px solid #1a1a1a;
-    padding: 30px 0;
+    /* CONTACT BANNER */
+/* BANNER DE CONTATO PREMIUM */
+.contact-banner-premium {
+    /* Mantenha o background com imagem e overlay escuro que funcionou */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
+                url('img/hc.png'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 100px 20px;
     text-align: center;
-    font-size: 12px;
-    color: #555;
+    display: flex;
+    justify-content: center;
 }
 
-/* RESPONSIVIDADE */
+.contact-flex-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Título principal em BRANCO */
+.contact-text-box h2 {
+    font-size: 48px;
+    color: #ffffff; /* Todo o título fica branco por padrão */
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+/* === NOVO: Classe para deixar apenas o span em VERDE === */
+.txt-verde {
+    color: #1dd793 !important; /* Cor verde da referência aplicada só aqui */
+}
+
+/* === CORREÇÃO: Parágrafo mais claro para não ficar "apagado" === */
+.contact-text-box p {
+    color: #f5f5f5; /* Um branco-sujo/cinza muito claro para máximo contraste */
+    font-size: 20px; /* Aumentado um pouco para facilitar a leitura */
+    font-weight: 300;
+    max-width: 600px; /* Limita a largura para melhor leitura */
+    margin: 0 auto; /* Centraliza o parágrafo */
+}
+
+/* Botão e responsividade (mantenha os ajustes anteriores que funcionaram) */
+.btn-cta-premium {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 45px;
+    border: 1.5px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 400;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+}
+
+.btn-cta-premium:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.tag-verde {
+    color: #1dd793;
+    font-size: 14px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 15px;
+}
+
 @media (max-width: 768px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        text-align: center;
-    }
-    
-    .footer-column p {
-        margin: 0 auto;
-    }
-    
-    .footer-social {
-        justify-content: center;
-    }
+    .contact-text-box h2 { font-size: 32px; }
+    .contact-text-box p { font-size: 16px; }
+    .btn-cta-premium {  justify-content: center; }
 }
-
-
-
-/* HEADER DARK */
-.header { background: #000; padding: 20px 0; position: sticky; top: 0; z-index: 100; }
-.header-content { display: flex; justify-content: space-between; align-items: center; }
-.logo-text { font-family: 'Montserrat'; font-weight: 800; color: var(--vant-green); font-size: 26px; }
-.nav a { color: #fff; text-decoration: none; margin-left: 25px; font-weight: 600; font-size: 14px; }
-.btn-header { background: var(--vant-green); padding: 10px 20px !important; border-radius: 5px; }
 
   </style>
 </head>
 <body>
 
-    
   <header class="header">
-    <div class="container header-content">
-      <div class="logo"><span class="logo-text">vant</span></div>
-      <nav class="nav">
-       
+    <div class="container nav-content">
+      <a href="index.html" class="logo-text">vant</a>
+      <nav class="nav-links">
+        <a href="index.html">Início</a>
+        <a href="index.html#servicos">Serviços</a>
+        <a href="index.html#sobre">Sobre Nós</a>
+        <a href="#contato" class="btn-contact">contato</a>
       </nav>
     </div>
   </header>
+
   <main class="container service-detail-section">
     
     <div class="detail-row">
@@ -406,7 +384,7 @@
         <a href="#contato" class="btn-pill">Solicitar Orçamento</a>
       </div>
       <div class="detail-image">
-        <img src="img/casa.jpg" alt="Reformas Vant">
+        <img src="images/modern-country-houses-construction.jpg" alt="Reformas Vant">
       </div>
     </div>
 
@@ -424,7 +402,7 @@
         <a href="#contato" class="btn-pill">Consultar Engenheiro</a>
       </div>
       <div class="detail-image">
-        <img src="img/casa.jpg" alt="Elétrica Vant">
+        <img src="images/safety-extinguisher-instrument-utility-faucet.jpg" alt="Elétrica Vant">
       </div>
     </div>
 
@@ -442,50 +420,55 @@
         <a href="#contato" class="btn-pill">Saber Mais</a>
       </div>
       <div class="detail-image">
-        <img src="img/casa.jpg" alt="Gestão de Obras Vant">
+        <img src="images/close-up-construction-engineer-writing.jpg" alt="Gestão de Obras Vant">
       </div>
     </div>
 
   </main>
 
+<section class="contact-banner-premium">
+    <div class="container contact-flex-layout">
+        <div class="contact-text-box">
+            <span class="tag-verde">AGORA É COM A GENTE!</span>
+            <h2>confie o seu projeto a <span class="txt-verde">quem entende</span></h2>
+            <p>Projetos sob medida, qualidade e acabamento profissional.</p>
+        </div>
+        
+        <div class="contact-button-box">
+            <a href="#" class="btn-cta-premium">
+                VAMOS CONVERSAR 
+                <span class="icon-seta">→</span>
+            </a>
+        </div>
+    </div>
+</section>
+
   <footer class="footer-premium">
     <div class="container footer-grid">
         <div class="footer-column bio">
-            <div class="logo"><span class="logo-text">vant</span></div>
-            <p>Engenharia de precisão e gestão inteligente para transformar projetos em realidades sólidas.</p>
-            <div class="footer-social">
-                <a href="#" class="social-icon">IG</a>
-                <a href="#" class="social-icon">WA</a>
-                <a href="#" class="social-icon">LI</a>
-            </div>
+            <a href="#" class="logo-text">vant</a>
+            <p style="margin-top: 20px;">Engenharia de precisão e gestão inteligente para transformar projetos em realidades sólidas.</p>
         </div>
-
         <div class="footer-column">
             <h3>navegação</h3>
             <ul>
                 <li><a href="index.html">Início</a></li>
                 <li><a href="index.html#servicos">Serviços</a></li>
-                <li><a href="index.html#sobre">Sobre Nós</a></li>
                 <li><a href="index.html#contato">Contato</a></li>
             </ul>
         </div>
-
         <div class="footer-column">
             <h3>contato</h3>
             <ul>
                 <li><span class="txt-verde">E:</span> contato@vant.com.br</li>
                 <li><span class="txt-verde">T:</span> (11) 99999-9999</li>
-                <li>Sua Cidade - SP</li>
             </ul>
         </div>
     </div>
-
     <div class="footer-bottom">
-        <div class="container">
-            <p>© 2026 <span class="txt-verde">vant construtora</span>. todos os direitos reservados.</p>
-        </div>
+        <p>© 2026 <span class="txt-verde">vant construtora</span>. todos os direitos reservados.</p>
     </div>
-</footer>
+  </footer>
 
 </body>
 </html>

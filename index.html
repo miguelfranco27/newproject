@@ -4,100 +4,102 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Vant Construtora | Engenharia e Gestão</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <header class="header">
-    <div class="container header-content">
-      <div class="logo"><span class="logo-text">vant</span></div>
-      <nav class="nav">
-        <a href="#">Início</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#contato" class="btn btn-header">Contato</a>
-      </nav>
+<header class="header">
+  <div class="container header-content">
+    <div class="logo">VANT</div>
+    
+    <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
     </div>
-  </header>
 
-  <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <h1>construção e reforma com <span class="highlight">método e organização</span></h1>
-      <p>Execução de obras residenciais com metodologia estruturada e monitoramento completo de todas as fases.</p>
-      <a href="#" class="btn btn-primary">Peça um orçamento</a>
-    </div>
-  </section>
+    <nav class="nav" id="nav-menu">
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">About</a>
+      <a href="#contato" class="btn-contato">Contato</a>
+    </nav>
+  </div>
+</header>
 
-  <section class="about" id="sobre">
+<section class="hero">
+  <div class="container hero-content">
+    <h1>Construção e reforma com <span class="highlight">método e organização</span></h1>
+    <p>Execução de obras residenciais com metodologia estruturada e monitoramento completo de todas as fases.</p>
+    <a href="#" class="btn-orcamento">Peça um orçamento</a>
+  </div>
+</section>
+
+<section class="about" id="sobre">
     <div class="container about-grid">
       <div class="about-text">
         <span class="section-subtitle">O que fazemos</span>
         <h2>construção residencial</h2>
         <p class="paragrafo">Execução de obras residenciais com planejamento técnico, organização e controle de qualidade em todas as etapas.</p>
+        <a href="vejamais.html" class="btn-main">Veja mais</a>
       </div>
       <div class="about-image">
-        <img src="img/casa.jpg" alt="Obra Vant">
+        <img src="images/3d-house-model-with-modern-architecture.jpg" alt="Obra Vant">
       </div>
     </div>
-  </section>
+</section>
 
-  <section class="services-dark" id="servicos">
-    <div class="container">
-      <h2 class="section-title-white">nossos serviços</h2>
-      <div class="services-grid">
-        <div class="service-card-premium">
-          <div class="card-img"><img src="img/casa.jpg"></div>
-          <div class="card-info">
-            <h3>construção residencial</h3>
-            <p>Metodologia estruturada e acompanhamento técnico.</p>
-            <a href="vejamais.html" class="btn-link">Veja Mais →</a>
-          </div>
-        </div>
-        <div class="service-card-premium">
-          <div class="card-img"><img src="img/casa.jpg"></div>
-          <div class="card-info">
-            <h3>reformas gerais</h3>
-            <p>Padrão superior de acabamento e gestão de prazos.</p>
-            <a href="vejamais.html" class="btn-link">Veja Mais →</a>
-          </div>
-        </div>
-        <div class="service-card-premium">
-          <div class="card-img"><img src="img/casa.jpg"></div>
-          <div class="card-info">
-            <h3>galpões metálicos</h3>
-            <p>Qualidade construtiva para grandes estruturas.</p>
-            <a href="vejamais.html" class="btn-link">Veja Mais →</a>
-          </div>
+<section class="services-dark" id="servicos">
+  <div class="container">
+    <h2 class="section-title">Serviços</h2>
+    <div class="services-grid">
+      
+      <div class="service-card-premium">
+        <img src="images/casal.jpg" alt="Construção Residencial">
+        <div class="card-overlay">
+          <h3>Construção residencial</h3>
+          <a href="vejamais.html" class="btn-link">Veja Mais →</a>
+        </div>                  
+      </div>
+
+      <div class="service-card-premium">
+        <img src="images/galpao.jpg" alt="Galpões Metálicos">
+        <div class="card-overlay">
+          <h3>galpões metálicos</h3>
+          <a href="vejamais.html" class="btn-link">Veja Mais →</a>
         </div>
       </div>
+
+      <div class="service-card-premium">
+        <img src="images/reformas.jpg" alt="Reformas Gerais">
+        <div class="card-overlay">
+          <h3>reformas gerais</h3>
+          <a href="vejamais.html" class="btn-link">Veja Mais →</a>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
-
-
-
-    <section class="quality-section">
+<section class="quality-section">
     <div class="container">
         <div class="quality-header">
             <h2>compromisso com <span class="highlight">qualidade</span></h2>
             <p>Trabalhamos com gestão eficiente para garantir segurança e cumprimento de prazos.</p>
         </div>
-
         <div class="quality-grid">
             <div class="quality-item">
                 <span class="quality-number">01</span>
-                <h3>acompanhamento</h3>
+                <h3>Acompanhamento</h3>
                 <p>Supervisão profissional em todas as fases.</p>
             </div>
-
             <div class="quality-item">
                 <span class="quality-number">02</span>
-                <h3>planejamento</h3>
+                <h3>Planejamento</h3>
                 <p>Organização do início até a entrega final.</p>
             </div>
-
             <div class="quality-item">
                 <span class="quality-number">03</span>
                 <h3>prazos</h3>
@@ -132,7 +134,9 @@
     </div>
 </section>
 
-  <section class="contact-banner-premium">
+
+
+<section class="contact-banner-premium">
     <div class="container contact-flex-layout">
         <div class="contact-text-box">
             <span class="tag-verde">AGORA É COM A GENTE!</span>
@@ -143,50 +147,44 @@
         <div class="contact-button-box">
             <a href="#" class="btn-cta-premium">
                 VAMOS CONVERSAR 
-                →
+                <span class="icon-seta">→</span>
             </a>
         </div>
     </div>
 </section>
 
-  <footer class="footer-premium">
+<footer class="footer-premium">
     <div class="container footer-grid">
         <div class="footer-column bio">
-            <div class="logo"><span class="logo-text">vant</span></div>
-            <p>Engenharia de precisão e gestão inteligente para transformar projetos em realidades sólidas.</p>
-            <div class="footer-social">
-                <a href="#" class="social-icon">IG</a>
-                <a href="#" class="social-icon">WA</a>
-                <a href="#" class="social-icon">LI</a>
-            </div>
+            <div class="logo">VANT</div>
+            <p>Engenharia de precisão e gestão inteligente.</p>
         </div>
-
         <div class="footer-column">
             <h3>navegação</h3>
             <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="index.html#servicos">Serviços</a></li>
-                <li><a href="index.html#sobre">Sobre Nós</a></li>
-                <li><a href="index.html#contato">Contato</a></li>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#">Sobre Nós</a></li>
             </ul>
         </div>
-
         <div class="footer-column">
             <h3>contato</h3>
             <ul>
-                <li><span class="txt-verde">E:</span> contato@vant.com.br</li>
-                <li><span class="txt-verde">T:</span> (11) 99999-9999</li>
+                <li>contato@vant.com.br</li>
+                <li>(11) 99999-9999</li>
                 <li>Sua Cidade - SP</li>
             </ul>
         </div>
     </div>
-
-    <div class="footer-bottom">
-        <div class="container">
-            <p>© 2026 <span class="txt-verde">vant construtora</span>. todos os direitos reservados.</p>
-        </div>
-    </div>
 </footer>
 
+<script>
+    const menuToggle = document.getElementById('mobile-menu');
+    const navMenu = document.getElementById('nav-menu');
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        menuToggle.classList.toggle('is-active');
+    });
+</script>
 </body>
 </html>
