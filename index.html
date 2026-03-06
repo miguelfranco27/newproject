@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Vant Construtora | Engenharia e Gestão</title>
+    
+    <link rel="preload" as="image" href="images/hero.jpg" fetchpriority="high">
+    
     <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css"/>
 </head>
@@ -45,7 +48,7 @@
         <a href="vejamais.html" class="btn-main">Veja mais</a>
       </div>
       <div class="about-image">
-        <img src="images/3d-house-model-with-modern-architecture.jpg" alt="Obra Vant">
+        <img src="images/3d-house-model-with-modern-architecture.jpg" alt="Obra Vant" fetchpriority="high" decoding="async">
       </div>
     </div>
 </section>
@@ -56,7 +59,7 @@
     <div class="services-grid">
       
       <div class="service-card-premium">
-        <img src="images/casal.jpg" alt="Construção Residencial">
+        <img src="images/casal.jpg" alt="Construção Residencial" loading="lazy" decoding="async">
         <div class="card-overlay">
           <h3>Construção residencial</h3>
           <a href="vejamais.html" class="btn-link">Veja Mais →</a>
@@ -64,7 +67,7 @@
       </div>
 
       <div class="service-card-premium">
-        <img src="images/galpao.jpg" alt="Galpões Metálicos">
+        <img src="images/galpao.jpg" alt="Galpões Metálicos" loading="lazy" decoding="async">
         <div class="card-overlay">
           <h3>galpões metálicos</h3>
           <a href="vejamais.html" class="btn-link">Veja Mais →</a>
@@ -72,7 +75,7 @@
       </div>
 
       <div class="service-card-premium">
-        <img src="images/reformas.jpg" alt="Reformas Gerais">
+        <img src="images/reformas.jpg" alt="Reformas Gerais" loading="lazy" decoding="async">
         <div class="card-overlay">
           <h3>reformas gerais</h3>
           <a href="vejamais.html" class="btn-link">Veja Mais →</a>
@@ -113,10 +116,8 @@
     <div class="container">
         <div class="insta-card">
             <div class="insta-image-wrapper">
-                <img src="img/hc.png" alt="Instagram Vant Construtora">
-                <div class="insta-overlay">
-                   
-                </div>
+                <img src="img/hc.png" alt="Instagram Vant Construtora" loading="lazy" decoding="async">
+                <div class="insta-overlay"></div>
             </div>
             
             <div class="insta-content">
@@ -133,8 +134,6 @@
         </div>
     </div>
 </section>
-
-
 
 <section class="contact-banner-premium">
     <div class="container contact-flex-layout">

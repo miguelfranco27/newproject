@@ -183,7 +183,7 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
 .contact-banner-premium {
     /* Mantenha o background com imagem e overlay escuro que funcionou */
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
-                url('img/hc.png'); 
+                url('img/house.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

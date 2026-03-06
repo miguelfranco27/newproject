@@ -245,13 +245,17 @@
         box-shadow: -10px 0 30px rgba(0,0,0,0.05);
       }
 
+      
+
       .nav-links.active { right: 0; }
 
       .detail-row { flex-direction: column !important; text-align: center; gap: 40px; }
       .detail-image::after { display: none; }
       .benefits-list li { justify-content: center; }
     
-    } 
+
+
+    }
 
  
 /* MOBILE */
@@ -265,6 +269,10 @@
     .about-grid, .services-grid, .quality-grid, .footer-grid, .insta-card { grid-template-columns: 1fr; }
     .insta-image-wrapper { min-height: 300px; }
     .insta-content { padding: 40px 25px; text-align: center; align-items: center; }
+    .margem{
+margin:30px
+
+    }
 }
 
 
@@ -346,11 +354,7 @@
     margin-bottom: 15px;
 }
 
-@media (max-width: 768px) {
-    .contact-text-box h2 { font-size: 32px; }
-    .contact-text-box p { font-size: 16px; }
-    .btn-cta-premium {  justify-content: center; }
-}
+
 
   </style>
 </head>
@@ -369,7 +373,7 @@
   </header>
 
   <main class="container service-detail-section">
-    
+    <div class="margem">
     <div class="detail-row">
       <div class="detail-text">
         <span class="category-tag">Residencial & Comercial</span>
@@ -423,25 +427,10 @@
         <img src="images/close-up-construction-engineer-writing.jpg" alt="Gestão de Obras Vant">
       </div>
     </div>
-
+</div>
   </main>
 
-<section class="contact-banner-premium">
-    <div class="container contact-flex-layout">
-        <div class="contact-text-box">
-            <span class="tag-verde">AGORA É COM A GENTE!</span>
-            <h2>confie o seu projeto a <span class="txt-verde">quem entende</span></h2>
-            <p>Projetos sob medida, qualidade e acabamento profissional.</p>
-        </div>
-        
-        <div class="contact-button-box">
-            <a href="#" class="btn-cta-premium">
-                VAMOS CONVERSAR 
-                <span class="icon-seta">→</span>
-            </a>
-        </div>
-    </div>
-</section>
+
 
   <footer class="footer-premium">
     <div class="container footer-grid">
